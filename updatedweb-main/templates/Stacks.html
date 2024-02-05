@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infix to Postfix Converter</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+        }
+        body {
+            background-image: url("../static/images/fuji.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+
+        }
+        
+        header ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header ul li {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        header ul li a {
+            text-decoration: none;
+            padding: 6px 10px;
+            color: #fff;
+            border-radius: 20px;
+        }
+
+        header ul li a:hover,
+        header ul li a.active {
+            background: #fff;
+            color: #2b1055;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+
+        header .Group {
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px; 
+            border-radius: 10px;
+            text-align: center;
+            width: 60%; 
+            max-width: 600px; 
+            opacity: 85%;
+        }
+        h1 {
+            font-family: Arial, sans-serif;
+            color: #4caf50; 
+            font-size: 60px;
+        }
+        label {
+            color: #66bb6a; 
+            font-size: 20px;
+        }
+        input[type="text"] {
+            border: 2px solid #66bb6a; 
+            border-radius: 10px;
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #388e3c; 
+        }
+        p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        h2 {
+            color: #4caf50;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="Group">Group 5</a>
+        <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="Profpage">Profile</a></li>
+        <li><a href="Search_algo">Search Algorithm</a></li>
+        <li><a href="Stacks" class="active">Stacks</a></li>
+        <li><a href="queue">Queue</a></li>
+        <li><a href="dequeu">Dequeu</a></li>
+        <li><a href="hash">Hash Table</a></li>
+        <li><a href="Graph">Graph</a></li>
+        <li><a href="sort_page">Sort</a></li>
+        </ul>
+    </header>
+    <div class="container">
+        <h1>Infix to Postfix Converter</h1>
+
+        <form method="post">
+            <label for="infix_expression">Enter Infix Expression:</label>
+            <input type="text" id="infix_expression" name="infix_expression" required>
+            <br>
+            <button type="submit">Convert</button>
+        </form>
+    
+        {% if infix_expression %}
+            <h2>Output Postfix:</h2>
+            {% for step in postfix_steps %}
+                <p>{{ step }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
